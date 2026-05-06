@@ -1,0 +1,17 @@
+{
+  "repo": "ember-svc-notify-forge",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 5,
+    "ship": 163,
+    "watch": 119
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}
