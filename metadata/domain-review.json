@@ -1,0 +1,73 @@
+{
+  "repo": "ember-svc-notify-forge",
+  "language": "Kotlin",
+  "category": "Backend services",
+  "goal": "Design a Kotlin verification harness for notify systems, covering security rule linting, safe and unsafe fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 80,
+      "slack": 33,
+      "drag": 10,
+      "confidence": 61,
+      "score": 224,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 78,
+      "slack": 23,
+      "drag": 15,
+      "confidence": 74,
+      "score": 208,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 81,
+      "slack": 31,
+      "drag": 15,
+      "confidence": 77,
+      "score": 225,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 79,
+      "slack": 33,
+      "drag": 16,
+      "confidence": 65,
+      "score": 208,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 76,
+      "slack": 40,
+      "drag": 20,
+      "confidence": 62,
+      "score": 194,
+      "lane": "ship"
+    }
+  ]
+}
